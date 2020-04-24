@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<title>Student Education Task Portal</title>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="heading">
+			<h1>Student Education Task Portal</h1>
+		</div>
+		<div class="body">
+			<form name="weeklyReport" action="">
+				<div>
+					<div class="form-group">
+					<label for="stdname" class="form-label">Student Name </label>
+					
+					<div class="">
+						<input class="form-control" type="text" name="stdname" placeholder="Enter Your Name" id="stdname" />
+					</div>
+				</div>
+					<div class="form-group">
+					<label for="stdid" class="form-label">Student ID </label>
+					
+					<div class="">
+						<input class="form-control" type="number" name="stdid" placeholder="Enter Your Student Number" id="stdid" />
+					</div></div>
+					<div class="form-group">
+					<label for="stdDate" class="form-label">Date </label>
+					
+					<div class="">
+						<input class="form-control" type="date" name="stdDate" placeholder="Enter Date" id="stdDate" />
+					</div></div>
+					<div class="form-group">
+					<label for="stdCompleteDesc" class="form-label">Task Completed Description in Last Week</label>
+					
+					<div class="">
+						<textarea class="form-control"  name="stdCompleteDesc" placeholder="Provide Description of the completed task last week" id="stdCompleteDesc" rows="4" cols="50"></textarea>
+					</div></div>
+					<div class="form-group">
+					<label for="stdToCompleteDesc" class="form-label">Task To Be Completed Description for Next Week</label>
+					
+					<div class="">
+						<textarea class="form-control" name="stdToCompleteDesc" placeholder="Provide description of the task to be completed next week" id="stdToCompleteDesc" rows="4" cols="50"></textarea>
+					</div></div>
+					
+					</div>
+				</div>
+				<input type="submit" class="btn btn-primary" value="Submit" />
+				<button class="btn btn-danger">Cancel</button>
+				<button class="btn btn-default">Reset</button>
+			</form>
+		</div>
+		<div class="footer">
+		</div>
+	</body>
+
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>
+
+// Wait for the DOM to be ready
+$(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='weeklyReport']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      stdname: "required",
+      stdid: "required",
+      stdDate: "required",
+      stdCompleteDesc: "required",
+      stdToCompleteDesc: "required",
+  },
+
+    // Specify validation error messages
+    messages: {
+      stdname: "Please enter your name",
+      stdid: "Please enter your student number",
+      stdDate: "please enter current date",
+      stdCompleteDesc: "please enter the description of the task you completed",
+      stdToCompleteDesc: "please enter the description of the task to be completed",
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+</script>
+
+</html>

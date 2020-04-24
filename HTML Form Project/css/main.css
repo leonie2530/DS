@@ -1,0 +1,12 @@
+body {
+	padding: 20px;
+}
+
+div {
+	margin-top: 10px;
+	width: 80%;
+}
+
+form .error {
+  color: #ff0000;
+}
